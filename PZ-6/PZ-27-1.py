@@ -1,22 +1,17 @@
 
+"""Дан список A размера N. Найти минимальный элемент из его элементов с четными
+номерами: A2, A4, A6, ... ."""
+
 
 
 
 def main(A):
-    try:
         A = A.split(' ')
-        B = []
-        count = 1
-        for i in A:
-            if int(i)%2 == 0:
-                B.append(i)
-                count+=2
-            else:
-                count+=2
-
-        print(f'Список -- {B}\nДлинна -- {len(B)}')
-    except:
-        print('[error]- попробуйте заново!\n\n')
-        main(A=input('Введите список чисел через пробел: '))
+        lst_result = []
+        count = 0
+        for x in range(int(len(A)/2)):
+            lst_result.append(A[count])
+            count+=2
+        print(f'\nсписок с числами четных номеров -- {lst_result}\nминимальный элемент списка -- {min(lst_result)}')
 
 main(A=input('Введите список чисел через пробел: '))
