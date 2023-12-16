@@ -4,7 +4,14 @@
 
 def main(string):
     string = string.split()
-    print(f'Пробелов в строке: {len(string) - 1}')
+    letter = ['а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', 'ё']
+    count = 0
+    for i in string:
+        for x in letter:
+            if i[0].lower() == x:
+                count+=1
+
+    print(f'Слов в строке: {count}')
 
 
 if __name__ == '__main__':
