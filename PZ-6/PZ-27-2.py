@@ -4,9 +4,19 @@
 
 
 
-def main(A):
+import random
+
+def main(Q):
     try:
-        A = A.split(' ')
+        if Q == 'y':
+            A = []
+            for x in range(random.randint(5,50)):
+                A.append(random.randint(1,100))
+            print(f'Список A -- {A}')
+
+        if Q == 'n':
+            A = input('ведите список чисел через пробел: ')
+            A = A.split(' ')
         B = []
         count = 1
         for i in A:
@@ -19,6 +29,6 @@ def main(A):
         print(f'Список -- {B}\nДлинна -- {len(B)}')
     except:
         print('[error]- попробуйте заново!\n\n')
-        main(A=input('Введите список чисел через пробел: '))
+        main(Q=input('Хотите ли вы получить список рандомно? (y/n): '))
 
-main(A=input('Введите список чисел через пробел: '))
+main(Q=input('Хотите ли вы получить список рандомно? (y/n): '))
